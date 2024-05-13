@@ -31,6 +31,13 @@ io.on('connection', socket => {
 //#endregion
 const BASE = process.env.BASE_URL;
 //#region // !Routes
+
+app.get('${BASE}/api/', (req, res) => {
+  res.send('Hello, world!');
+});
+app.get('${BASE}/api', (req, res) => {
+  res.send('your api is working');
+});
 app.use(`${BASE}/api`, require('./routes/authRouter'));
 app.use(`${BASE}/api`, require('./routes/userRouter'));
 app.use(`${BASE}/api`, require('./routes/postRouter'));
